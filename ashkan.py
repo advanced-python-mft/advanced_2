@@ -22,7 +22,6 @@ while game:
             elif event.key == pygame.K_LEFT:
                 x_change = -10
                 y_change = 0
-
     dis.fill(BLACK)
     x += x_change
     y += y_change
