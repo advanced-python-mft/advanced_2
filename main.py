@@ -1,6 +1,18 @@
-import json
+import pygame
 
-d = {'apple':'sib', 2:6, 7:[2, 4, 5, 65]}
+pygame.init()
 
-with open('file.json', 'w') as f:
-    json.dump(d, f)
+dis = pygame.display.set_mode((400,300))
+pygame.display.update()
+RED = (255, 0, 0)
+game = True
+while game:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game = False
+
+    pygame.draw.rect(dis, RED, [100, 100, 60, 60])
+    pygame.display.update()
+
+pygame.quit()
+quit()
