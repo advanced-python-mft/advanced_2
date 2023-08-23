@@ -128,3 +128,6 @@ class Enemy(pygame.sprite.Sprite):
         if self.rect.bottom > HEIGHT:
             self.rect.bottom = HEIGHT
 
+#About showing points
+def show_score(score):
+    pass
