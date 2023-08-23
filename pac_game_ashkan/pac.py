@@ -11,3 +11,10 @@ import random
 WIDTH = 1500
 HEIGHT = 1000
 FPS = 60
+
+#Basic work before making the main game
+pygame.init()
+window = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("PAC")
+clock = pygame.time.Clock()
+
