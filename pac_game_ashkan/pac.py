@@ -19,8 +19,10 @@ pygame.display.set_caption("PAC")
 clock = pygame.time.Clock()
 
 # Definition of game options
-class Player():
+
+#Inherited from pygame.sprite.Sprite class
+class Player(pygame.sprite.Sprite):
     def __init__(self):
-        pass
+        pygame.sprite.Sprite.__init__(self)
     def update(self):
         pass
