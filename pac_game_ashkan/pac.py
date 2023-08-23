@@ -157,3 +157,11 @@ all_sprites.add(player)
 for _ in range(10):
     square = Square(player)
     all_sprites.add(square)
+
+#Add enemy to the game
+#Number of enemy
+for _ in range(1):
+    enemy = Enemy(player)
+    all_sprites.add(enemy)
+    enemies.add(enemy)
+
