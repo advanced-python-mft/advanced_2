@@ -104,5 +104,27 @@ class Enemy(pygame.sprite.Sprite):
         self.speed = 2 #The initial speed of the enemy
         self.target = target #enemy target
 
+    #Enemy movement
     def update(self):
-        pass
+        #Find the target
+        dx = self.target.rect.x - self.rect.x
+        dy = self.target.rect.y - self.rect.y
+        if dx < 0:
+            self.rect.x -= self.speed
+        elif dx > 0:
+            self.rect.x += self.speed
+        if dy < 0:
+            self.rect.y -= self.speed
+        elif dy > 0:
+            self.rect.y += self.speed
+        
+        #Restrictions on the enemy not to leave the margins
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.right > WIDTH:
+            self.rect.right = WIDTH
+        if self.rect.top < 0:
+            self.rect.top = 0
+        if self.rect.bottom > HEIGHT:
+            self.rect.bottom = HEIGHT
+
