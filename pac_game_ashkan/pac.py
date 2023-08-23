@@ -138,3 +138,6 @@ def show_score(score):
 
     #Its location
     window.blit(text, (10, 10))
+
+#Maintain and manage all sprit objects
+all_sprites = pygame.sprite.Group()
