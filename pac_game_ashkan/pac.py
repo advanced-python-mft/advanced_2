@@ -24,6 +24,7 @@ clock = pygame.time.Clock()
 # Definition of game options
 
 #Inherited from pygame.sprite.Sprite class
+# Player class
 class Player(pygame.sprite.Sprite):
     #Character creation
     def __init__(self):
@@ -61,4 +62,12 @@ class Player(pygame.sprite.Sprite):
             self.rect.top = 0
         if self.rect.bottom > HEIGHT:
             self.rect.bottom = HEIGHT
-        
+
+#Inherited from pygame.sprite.Sprite class
+# Points class
+class Square(pygame.sprite.Sprite):
+    def __init__(self, player):
+        pygame.sprite.Sprite.__init__(self)
+
+    def update(self):
+        pass
