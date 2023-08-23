@@ -14,6 +14,7 @@ FPS = 60
 
 #The color of the characters
 YELLOW = (255, 255, 0)
+PURPLE = (106, 13, 173)
 
 #Basic work before making the main game
 pygame.init()
@@ -64,10 +65,19 @@ class Player(pygame.sprite.Sprite):
             self.rect.bottom = HEIGHT
 
 #Inherited from pygame.sprite.Sprite class
-# Points class
+#Points class
 class Square(pygame.sprite.Sprite):
+    #Appearance of points
     def __init__(self, player):
+        #Score color and size
         pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((20, 20))
+        self.image.fill(PURPLE)
+        #Moving points randomly
+        self.rect = self.image.get_rect()
+        self.rect.x = random.randint(0, WIDTH - self.rect.width)
+        self.rect.y = random.randint(0, HEIGHT - self.rect.height)
+        self.player = player
 
     def update(self):
         pass
