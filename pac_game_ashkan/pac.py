@@ -25,15 +25,30 @@ clock = pygame.time.Clock()
 
 #Inherited from pygame.sprite.Sprite class
 class Player(pygame.sprite.Sprite):
+    #Character creation
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        #Character creation
+        #Character color and size
         self.image = pygame.Surface((50, 50))
         self.image.fill(YELLOW)
-        #Body part, size and location
+        #Body part and location
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
         self.speed = 5 #Initial speed
         self.score = 0 #Initial score
+    
+    #Character movement
     def update(self):
-        pass
+        #Capturing any movement from the user
+        keys = pygame.key.get_pressed()
+
+        #Betting on movement
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= self.speed
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += self.speed
+        if keys[pygame.K_UP]:
+            self.rect.y -= self.speed
+        if keys[pygame.K_DOWN]:
+            self.rect.y += self.speed
+        
