@@ -141,3 +141,6 @@ def show_score(score):
 
 #Maintain and manage all sprit objects
 all_sprites = pygame.sprite.Group()
+
+#Player representative
+player = Player()
