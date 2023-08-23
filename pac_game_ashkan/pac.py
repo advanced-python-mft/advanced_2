@@ -15,6 +15,7 @@ FPS = 60
 #The color of the characters
 YELLOW = (255, 255, 0)
 PURPLE = (106, 13, 173)
+RED = (255, 0, 0)
 
 #Basic work before making the main game
 pygame.init()
@@ -92,7 +93,16 @@ class Square(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     #The appearance of the enemy
     def __init__(self, target):
+        #Enemy size and color
         pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((30, 30))
+        self.image.fill(RED)
+        #The shape and location of the enemy
+        self.rect = self.image.get_rect()
+        self.rect.x = random.randint(0, WIDTH - self.rect.width)
+        self.rect.y = random.randint(0, HEIGHT - self.rect.height)
+        self.speed = 2 #The initial speed of the enemy
+        self.target = target #enemy target
 
     def update(self):
         pass
