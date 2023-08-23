@@ -146,4 +146,7 @@ all_sprites = pygame.sprite.Group()
 player = Player()
 
 #Maintain and manage all enemy objects
-enemies = pygame.sprite.Group()  
+enemies = pygame.sprite.Group()
+
+#Add player to game
+all_sprites.add(player)
