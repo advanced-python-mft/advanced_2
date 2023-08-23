@@ -79,5 +79,11 @@ class Square(pygame.sprite.Sprite):
         self.rect.y = random.randint(0, HEIGHT - self.rect.height)
         self.player = player
 
+    #Movement and points
     def update(self):
-        pass
+        if pygame.sprite.collide_rect(self, self.player):
+            #Collect points
+            self.player.score += 1 
+            #Transfer points
+            self.rect.x = random.randint(0, WIDTH - self.rect.width)
+            self.rect.y = random.randint(0, HEIGHT - self.rect.height)
