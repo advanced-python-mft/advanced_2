@@ -12,6 +12,9 @@ WIDTH = 1500
 HEIGHT = 1000
 FPS = 60
 
+#The color of the characters
+YELLOW = (255, 255, 0)
+
 #Basic work before making the main game
 pygame.init()
 window = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -24,5 +27,13 @@ clock = pygame.time.Clock()
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
+        #Character creation
+        self.image = pygame.Surface((50, 50))
+        self.image.fill(YELLOW)
+        #Body part, size and location
+        self.rect = self.image.get_rect()
+        self.rect.center = (WIDTH / 2, HEIGHT / 2)
+        self.speed = 5 #Initial speed
+        self.score = 0 #Initial score
     def update(self):
         pass
