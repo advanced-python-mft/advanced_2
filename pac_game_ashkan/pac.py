@@ -165,3 +165,27 @@ for _ in range(1):
     all_sprites.add(enemy)
     enemies.add(enemy)
 
+
+#Settings section
+running = True
+while running:
+    #To limit the number of frames per second
+    clock.tick(FPS)
+
+
+    for event in pygame.event.get(): #In addition to each event
+        #When the received event was of QUIT type
+        if event.type == pygame.QUIT:
+            running = False #The loop is terminated
+
+    all_sprites.update() #All sprites should be updated
+
+    hits = pygame.sprite.spritecollide(player, enemies, False) #Capture enemy collisions with the player
+    if hits:
+        print("The game is over!")
+        running = False
+
+    window.fill((0, 0, 0)) #back ground
+    all_sprites.draw(window) #In this part, we say that all the sprites in the game should be
+    show_score(player.score) #Show scores in the game
+    pygame.display.flip() #Show all changes
