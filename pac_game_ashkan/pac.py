@@ -130,4 +130,11 @@ class Enemy(pygame.sprite.Sprite):
 
 #About showing points
 def show_score(score):
-    pass
+    #Text size and font
+    font = pygame.font.Font(None, 36)
+
+    #Our text along with its score and color
+    text = font.render("SCORE: " + str(score), True, YELLOW)
+
+    #Its location
+    window.blit(text, (10, 10))
