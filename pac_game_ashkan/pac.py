@@ -150,3 +150,10 @@ enemies = pygame.sprite.Group()
 
 #Add player to game
 all_sprites.add(player)
+
+
+#Add points to the game
+#Number of points
+for _ in range(10):
+    square = Square(player)
+    all_sprites.add(square)
