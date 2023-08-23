@@ -18,3 +18,9 @@ window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("PAC")
 clock = pygame.time.Clock()
 
+# Definition of game options
+class Player():
+    def __init__(self):
+        pass
+    def update(self):
+        pass
