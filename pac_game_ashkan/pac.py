@@ -87,3 +87,12 @@ class Square(pygame.sprite.Sprite):
             #Transfer points
             self.rect.x = random.randint(0, WIDTH - self.rect.width)
             self.rect.y = random.randint(0, HEIGHT - self.rect.height)
+
+#Making the enemy
+class Enemy(pygame.sprite.Sprite):
+    #The appearance of the enemy
+    def __init__(self, target):
+        pygame.sprite.Sprite.__init__(self)
+
+    def update(self):
+        pass
