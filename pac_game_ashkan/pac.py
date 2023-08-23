@@ -189,3 +189,5 @@ while running:
     all_sprites.draw(window) #In this part, we say that all the sprites in the game should be
     show_score(player.score) #Show scores in the game
     pygame.display.flip() #Show all changes
+
+pygame.quit() #End of events
